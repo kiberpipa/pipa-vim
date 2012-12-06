@@ -1,0 +1,9 @@
+{
+  "name" : "pipa-vim",
+  "version" : "0.1",
+  "author" : "Rok Garbas",
+  "maintainer" : "Rok Garbas <rok@garbas.si>",
+  "repository" : {"type": "git", "url": "git://github.com/kiberpipa/pipa-vim.git"},
+  "dependencies" : {},
+  "description" : "collection of usefull configurational snippets"
+}
