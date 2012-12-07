@@ -28,11 +28,14 @@ Backup you're old .vimrc and replace it with this lines::
 
     set runtimepath+=$HOME/.vim/addons/vim-addon-manager
     call vam#ActivateAddons(['github:kiberpipa/pipa-vim'], {'auto_install': 0})
-    
-    if !exists("$VIMCATEGORY")
-        let $VIMCATEGORY = 'default'
+
+    if exists("$VIMCATEGORY")
+        let VIMCATEGORY = $VIMCATEGORY
+    else
+        let VIMCATEGORY = [ 'default', 'development', 'python', 'html', 'css', 'javascript' ]
     endif
-    call pipa#category($VIMCATEGORY)
+
+    call pipa#categories(VIMCATEGORY)
 
 
 Using
