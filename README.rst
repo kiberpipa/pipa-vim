@@ -30,12 +30,12 @@ Backup you're old .vimrc and replace it with this lines::
     call vam#ActivateAddons(['github:kiberpipa/pipa-vim'], {'auto_install': 0})
 
     if exists("$VIMCATEGORY")
-        let VIMCATEGORY = $VIMCATEGORY
+        call pipa#category($VIMCATEGORY)
     else
-        let VIMCATEGORY = [ 'default', 'development', 'python', 'html', 'css', 'javascript' ]
+        for CATEGORY in [ 'development', 'python', 'html', 'css', 'javascript' ]
+            call pipa#category(CATEGORY)
+        endfor
     endif
-
-    call pipa#categories(VIMCATEGORY)
 
 
 Using
