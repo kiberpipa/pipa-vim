@@ -1,7 +1,7 @@
 " Author: Rok Garbas <rok@garbas.si>
 " Source: http://github.com/kiberpipa/pipa-vim
 
-function! pipa_development#addon(ADDONS)
+function! pipa_development#addons()
 
 function! Syntastic ()
     let g:syntastic_check_on_open=1
@@ -22,7 +22,7 @@ function! Fugitive ()
     map <LEADER>gd :Gdiff<CR>
 endfunction
 
-call extend(ADDONS, {
+call extend(g:PIPA_ADDONS, {
     \   'Syntastic': {
     \       'categories': [ 'development' ],
     \       'config': function('Syntastic')
