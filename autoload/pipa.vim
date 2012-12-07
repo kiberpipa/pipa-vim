@@ -17,6 +17,7 @@ function! pipa#category(CATEGORY, ...)
 
     let ADDONS = {}
 
+    call pipa_development#addons(all_addons)
     "call pipa_python#addons(all_addons)
 
     call extend(ADDONS, CUSTOM_ADDONS)
