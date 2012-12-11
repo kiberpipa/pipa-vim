@@ -22,6 +22,14 @@ function! Fugitive ()
     map <LEADER>gd :Gdiff<CR>
 endfunction
 
+function! TaskList ()
+    map <LEADER>tt <Plug>TaskList
+endfunction
+
+function! Tagbar()
+    nmap <LEADER>tb :TagbarToggle<CR>
+endfunction
+
 call extend(g:PIPA_ADDONS, {
     \   'Syntastic': {
     \       'categories': [ 'development' ],
@@ -34,6 +42,14 @@ call extend(g:PIPA_ADDONS, {
     \   'fugitive': {
     \       'categories': [ 'development' ],
     \       'config': function('Fugitive')
+    \       },
+    \   'TaskList': {
+    \       'categories': [ 'development' ],
+    \       'config': function('TaskList')
+    \       },
+    \   'Tagbar': {
+    \       'categories': [ 'development' ],
+    \       'config': function('Tagbar')
     \       },
     \})
 
