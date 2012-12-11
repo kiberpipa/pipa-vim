@@ -5,13 +5,18 @@ if !exists('g:PIPA_ADDONS')
     let g:PIPA_ADDONS = {}
 endif
 
-let g:PIPA_ADDONS_ACTIVATED = []
-let g:PIPA_VAM_OPTIONS = {
+if !exists('g:PIPA_ADDONS_ACTIVATED')
+    let g:PIPA_ADDONS_ACTIVATED = []
+endif
+
+if !exists('g:PIPA_VAM_OPTIONS')
+    let g:PIPA_VAM_OPTIONS = {
         \ 'auto_install': 1,
         \ 'plugin_root_dir': $HOME.'/.vim/addons',
         \ 'scm_merge_stategy': 'force',
         \ 'known_repos_activation_policy': 'ask',
         \ }
+endif
 
 call pipa_default#addons()
 call pipa_development#addons()
