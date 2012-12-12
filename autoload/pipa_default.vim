@@ -5,7 +5,7 @@ function! pipa_default#addons()
 
 call extend(g:PIPA_ADDONS, {
     \   'Powerline': {
-    \       'categories': [ 'default' ]
+    \       'categories': [ 'default' ],
     \       },
     \})
 

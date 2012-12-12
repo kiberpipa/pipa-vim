@@ -18,6 +18,8 @@ if !exists('g:PIPA_VAM_OPTIONS')
         \ }
 endif
 
+let g:PIPA_ADDONS_TO_ACTIVATE = []
+
 call pipa_default#addons()
 call pipa_development#addons()
 call pipa_python#addons()
@@ -27,25 +29,25 @@ call pipa_javascript#addons()
 
 function! pipa#category(CATEGORY)
 
-" Install addons and their specific configuration {{{
 
-let TO_ACTIVATE = []
-for name in keys(g:PIPA_ADDONS)
-    if (index(g:PIPA_ADDONS_ACTIVATED, name) == -1)
-            \&& (index(keys(g:PIPA_ADDONS[name]), 'categories') != -1)
-            \&& (index(g:PIPA_ADDONS[name]['categories'], a:CATEGORY) != -1)
-        call extend(TO_ACTIVATE, [name])
-    endif
-endfor
+    for name in keys(g:PIPA_ADDONS)
+        if ((index(keys(g:PIPA_ADDONS[name]), 'categories') != -1)
+            \&& (index(g:PIPA_ADDONS[name]['categories'], a:CATEGORY) != -1))
+            call extend(g:PIPA_ADDONS_TO_ACTIVATE, [name])
+        endif
+    endfor
 
-call vam#ActivateAddons(TO_ACTIVATE, g:PIPA_VAM_OPTIONS)
+endfunction
 
-for name in TO_ACTIVATE 
-    if (index(keys(g:PIPA_ADDONS[name]), 'config') != -1)
-        :call call(g:PIPA_ADDONS[name]['config'], [])
-    endif
-endfor
 
-" }}}
+function pipa#initialize()
+
+    call vam#ActivateAddons(g:PIPA_ADDONS_TO_ACTIVATE, g:PIPA_VAM_OPTIONS)
+
+    for name in g:PIPA_ADDONS_TO_ACTIVATE 
+        if (index(keys(g:PIPA_ADDONS[name]), 'config') != -1)
+            :call call(g:PIPA_ADDONS[name]['config'], [])
+        endif
+    endfor
 
 endfunction
