@@ -9,11 +9,6 @@ function! Syntastic ()
     let g:syntastic_stl_format = '[%E{%e Errors}%B{, }%W{%w Warnings}]'
 endfunction
 
-function! Gundo ()
-    let g:gundo_preview_bottom = 1
-    map <LEADER>G :GundoToggle<cr>
-endfunction
-
 function! Fugitive ()
     map <LEADER>gg :Git
     map <LEADER>gr :Gremove
@@ -34,10 +29,6 @@ call extend(g:PIPA_ADDONS, {
     \   'Syntastic': {
     \       'categories': [ 'development' ],
     \       'config': function('Syntastic')
-    \       },
-    \   'Gundo': {
-    \       'categories': [ 'development' ],
-    \       'config': function('Gundo')
     \       },
     \   'fugitive': {
     \       'categories': [ 'development' ],
