@@ -25,6 +25,11 @@ function! Tagbar()
     nmap <LEADER>tb :TagbarToggle<CR>
 endfunction
 
+function! GitGutter()
+    nmap <silent> ]h :<C-U>execute v:count1 . "GitGutterNextHunk"<CR>
+    nmap <silent> [h :<C-U>execute v:count1 . "GitGutterPrevHunk"<CR>
+endfunction
+
 call extend(g:PIPA_ADDONS, {
     \   'Syntastic': {
     \       'categories': [ 'development' ],
@@ -41,6 +46,10 @@ call extend(g:PIPA_ADDONS, {
     \   'Tagbar': {
     \       'categories': [ 'development' ],
     \       'config': function('Tagbar')
+    \       },
+    \   'vim-gitgutter': {
+    \       'categories': [ 'development' ],
+    \       'config': function('GitGutter')
     \       },
     \})
 
