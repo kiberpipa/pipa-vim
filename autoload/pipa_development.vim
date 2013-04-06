@@ -30,6 +30,11 @@ function! GitGutter()
     nmap <silent> [h :<C-U>execute v:count1 . "GitGutterPrevHunk"<CR>
 endfunction
 
+function! DetectIndent ()
+  autocmd BufReadPost * :DetectIndent
+endfunction
+
+
 call extend(g:PIPA_ADDONS, {
     \   'Syntastic': {
     \       'categories': [ 'development' ],
@@ -51,6 +56,13 @@ call extend(g:PIPA_ADDONS, {
     \       'categories': [ 'development' ],
     \       'config': function('GitGutter')
     \       },
+    \   'github:scrooloose/nerdcommenter': {
+    \       'categories': [ 'development' ]
+    \       },
+    \   'DetectIndent': {
+    \       'categories': [ 'default' ],
+    \       'config': function('DetectIndent')
+    \       }
     \})
 
 endfunction
