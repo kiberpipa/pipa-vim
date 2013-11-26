@@ -4,7 +4,7 @@
 function! pipa_default#addons()
 
 call extend(g:PIPA_ADDONS, {
-    \   'powerline': {
+    \   'vim-airline': {
     \       'categories': [ 'default' ],
     \       },
     \})
