@@ -4,7 +4,7 @@
 function! pipa_javascript#addons()
 
 call extend(g:PIPA_ADDONS, {
-    \   'jQuery': {
+    \   'vim-javascript': {
     \       'categories': [ 'javascript', 'web' ]
     \       },
     \})
