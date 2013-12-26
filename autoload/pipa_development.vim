@@ -25,9 +25,7 @@ function! Tagbar()
     nmap <LEADER>tb :TagbarToggle<CR>
 endfunction
 
-function! GitGutter()
-    nmap <silent> ]h :<C-U>execute v:count1 . "GitGutterNextHunk"<CR>
-    nmap <silent> [h :<C-U>execute v:count1 . "GitGutterPrevHunk"<CR>
+function! Signify()
 endfunction
 
 function! DetectIndent ()
@@ -46,6 +44,9 @@ call extend(g:PIPA_ADDONS, {
     \       'categories': [ 'development' ],
     \       'config': function('Fugitive')
     \       },
+    \   'gitv': {
+    \       'categories': [ 'development' ]
+    \       },
     \   'TaskList': {
     \       'categories': [ 'development' ],
     \       'config': function('TaskList')
@@ -54,9 +55,9 @@ call extend(g:PIPA_ADDONS, {
     \       'categories': [ 'development' ],
     \       'config': function('Tagbar')
     \       },
-    \   'vim-gitgutter': {
+    \   'vim-signify': {
     \       'categories': [ 'development' ],
-    \       'config': function('GitGutter')
+    \       'config': function('Signify')
     \       },
     \   'github:scrooloose/nerdcommenter': {
     \       'categories': [ 'development' ]
