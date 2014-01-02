@@ -7,6 +7,9 @@ call extend(g:PIPA_ADDONS, {
     \   'css_color@skammer': {
     \       'categories': [ 'web', 'css' ]
     \       },
+    \   'vim-css3-syntax': {
+    \       'categories': [ 'web', 'css' ]
+    \       },
     \   'vim-less': {
     \       'categories': [ 'web', 'css' ]
     \       },

@@ -29,7 +29,6 @@ call pipa_javascript#addons()
 
 function! pipa#category(CATEGORY)
 
-
     for name in keys(g:PIPA_ADDONS)
         if ((index(keys(g:PIPA_ADDONS[name]), 'categories') != -1)
             \&& (index(g:PIPA_ADDONS[name]['categories'], a:CATEGORY) != -1))
